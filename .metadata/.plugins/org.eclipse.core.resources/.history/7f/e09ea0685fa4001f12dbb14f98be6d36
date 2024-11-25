@@ -1,0 +1,46 @@
+/*
+ *
+ *
+ */
+
+#include "stm32f4xx.h"
+
+
+#define RCC_GPIOAEN			(1U << 0)
+#define UART2EN 			(1U << 17) // we chose uart2 instead of 1 cause it's conected to the USB (where it's written?)
+
+void uart2_tx_init(void) // PA2
+{
+	/****** configure UART GPIO pin *******/
+
+	// enable clock to GPIOA (cause PA2 and PA3 are the UART pins)
+	RCC->AHB1ENR |= RCC_GPIOAEN;
+
+	// set PA2 mode to Alternate function mode
+	// by page 157 datasheet, MODER, to set pin 2 in port A to uart, we need to set it to an alternate.
+	// by the description, we need to set bit's 4 and 5 in MODER(mode register) (MODER2) to 10.
+	GPIOA->MODER &= ~(1 << 4);
+	GPIOA->MODER |= (1 << 5);
+
+	// set PA2 Alternate function type to UART_TX (AF07 - by table 9 in datasheet).
+	// by the reference manual on page 161 (8.4.9) we'll choose AFRL2 cause we need PA2.
+	// it means we need to change bits: 8-11. to what? according to the alternate function's type,
+	// which is: AF7 - as we already know from the prev section
+
+	/****** configure UART settings *******/
+	// enable clock to UART2 (?)
+	// configure baud rate
+	// configure transfer direction
+	// enable UART (?)
+
+}
+
+int main()
+{
+
+	while(1)
+	{
+
+
+	}
+}

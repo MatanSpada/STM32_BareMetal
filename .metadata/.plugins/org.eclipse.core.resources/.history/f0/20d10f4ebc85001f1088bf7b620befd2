@@ -1,0 +1,5 @@
+// where is the led connected?
+// what is the port and pin?
+// according to the nucleo_user_guide:
+// port: A
+// pin: 5

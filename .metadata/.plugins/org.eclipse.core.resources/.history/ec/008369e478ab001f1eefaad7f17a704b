@@ -1,0 +1,24 @@
+#include <stdint.h>
+#include <stdio.h>
+#include "stm32f4xx.h" // for registers
+#include "uart.h"
+
+#define RCC_GPIOAEN		(1U << 0)
+#define LED_PIN			(1U << 5)
+
+char c = 0;
+
+int main()
+{
+	uart2_rxtx_init();				// init uart
+	RCC->AHB1EN |= RCC_GPIOAEN;		// enable clock to GPIO port A
+
+	GPIOA->MODER |= (1U << 10);		// set mode for pin 5 to output
+	GPIOA->MODER &= ~(1U << 11);
+
+
+	while(1)
+	{
+		c = uart_read();
+	}
+}

@@ -1,0 +1,10 @@
+21:59:57 **** Build of configuration Debug for project 1_led_toggle_struct ****
+make -j16 all 
+arm-none-eabi-size  1_led_toggle_struct.elf 
+   text	   data	    bss	    dec	    hex	filename
+    744	      0	   1568	   2312	    908	1_led_toggle_struct.elf
+Finished building: default.size.stdout
+ 
+
+21:59:57 Build Finished. 0 errors, 0 warnings. (took 138ms)
+

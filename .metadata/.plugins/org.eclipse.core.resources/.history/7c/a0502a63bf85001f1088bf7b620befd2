@@ -1,0 +1,9 @@
+// where is the led connected?
+// what is the port and pin?
+// according to the nucleo_user_guide:
+// port: A
+// pin: 5
+
+#define PERIPHERAL_BASE (0X40000000UL)
+#define AHB1_PERIPHERAL_OFFSET 0x00020000UL
+#DEFINE AHB1_PERIPHERAL_BASE (PERIPHERAL_BASE + AHB1_PERIPHERAL_OFFSET)

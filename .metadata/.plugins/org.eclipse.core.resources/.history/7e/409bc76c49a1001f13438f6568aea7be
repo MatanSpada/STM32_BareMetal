@@ -1,0 +1,21 @@
+/*
+ *
+ *
+ */
+
+#include "stm32f4xx.h"
+
+
+#define RCC_GPIOAEN			(1U << 0)
+#define UART2EN 			(1U << 17) // we chose uart2 instead of 1 cause it's conected to the USB (where it's written?)
+
+
+int main()
+{
+
+	while(1)
+	{
+
+
+	}
+}

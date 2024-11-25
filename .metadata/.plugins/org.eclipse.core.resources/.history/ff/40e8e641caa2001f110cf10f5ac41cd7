@@ -1,0 +1,38 @@
+/*
+ *
+ *
+ */
+
+#include "stm32f4xx.h"
+
+
+#define RCC_GPIOAEN			(1U << 0)
+#define UART2EN 			(1U << 17) // we chose uart2 instead of 1 cause it's conected to the USB (where it's written?)
+
+void uart2_tx_init(void) // PA2
+{
+	/****** configure UART GPIO pin *******/
+
+	// enable clock to GPIOA (cause PA2 and PA3 are the pins)
+	RCC->AHB1ENR |= RCC_GPIOAEN;
+
+	// set PA2 mode to Alternate function mode
+	// set PA2 Alternate function type to UART_TX (AF07 - by table 9 in datasheet).
+
+	/****** configure UART settings *******/
+	// enable clock to UART2 (?)
+	// configure baud rate
+	// configure transfer direction
+	// enable UART (?)
+
+}
+
+int main()
+{
+
+	while(1)
+	{
+
+
+	}
+}
