@@ -1,0 +1,17 @@
+
+
+
+#define ADCEN 		(1U << 8)
+
+
+// adc1_1 (adc 1 channel 1) corresponding to PA2, so:
+void pa1_adc_init(void)
+{
+	/***configure the ADC GPIO pin ***/
+	// enable clock to adc port GPIOA
+	// set the mode of PA1 to analog
+
+	/***configure the ADC module ***/
+	// enable clock access to ADC
+	// configure the ADC parameters
+}

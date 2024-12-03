@@ -1,0 +1,30 @@
+#include "stm32f4xx.h" // for registers
+
+
+#define ADCEN 			(1U << 8)
+#define RCC_GPIOAEN		(1U << 0)
+#define PA1				(1)
+#define MODER_BITS  	(2)
+
+// adc1_1 (adc 1 channel 1) corresponding to PA2, so:
+void pa1_adc_init(void)
+{
+	/***configure the ADC GPIO pin ***/
+
+	// enable clock to adc port GPIOA
+	RCC->AHB1ENR |= RCC_GPIOAEN;
+
+	// set the mode of PA1 to analog
+	GPIOA->MODER |= (3U << (MODER_BITS * PA1));
+	/*
+	 * GPIPA->MODER |= (1U << 2);
+	 * GPIPA->MODER |= (1U << 3);
+	 */
+
+	/***configure the ADC module ***/
+
+	// enable clock access to ADC
+	RCC->APB2ENR |= ADCEN;
+
+	// configure the ADC parameters
+}

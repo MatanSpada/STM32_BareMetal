@@ -290,3 +290,24 @@ java.io.FileNotFoundException: C:\Users\matan\Documents\STM32F4-BareMetal_Worksp
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2024-11-26 00:44:57.983
 !MESSAGE Won't launch debug session since we failed to locate the binary.
+!SESSION 2024-12-03 14:08:23.944 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=he_IL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-03 14:08:29.616
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-12-03 14:08:32.029
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-12-03 14:08:32.030
+!MESSAGE Log4j2 initialized with config file C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-12-03 14:08:35.138
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-12-03 14:09:56.417
+!MESSAGE Indexed '9_adc' (5 sources, 65 headers) in 1.43 sec: 2,842 declarations; 4,123 references; 6 unresolved inclusions; 30 syntax errors; 581 unresolved names (7.7%)
