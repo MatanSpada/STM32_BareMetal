@@ -1,0 +1,7 @@
+../Src/uart.c:26:6:uart2_rxtx_init	8	static
+../Src/uart.c:80:6:uart2_tx_init	8	static
+../Src/uart.c:118:6:uart_write	16	static
+../Src/uart.c:128:6:uart_read	4	static
+../Src/uart.c:143:17:ComputeUart	16	static
+../Src/uart.c:148:13:UartSetBaudrate	24	static
+../Src/uart.c:156:5:__io_putchar	16	static
