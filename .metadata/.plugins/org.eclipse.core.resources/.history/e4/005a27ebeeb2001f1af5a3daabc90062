@@ -1,0 +1,13 @@
+#include "stm32f4xx.h" // for registers
+
+#define SYS_CLK					(16000000)
+#define MILI_SEC				(1/1000)
+#define SYSTICK_VAL_MILI		(SYS_CLK * MILI_SEC) // same as 16,000,000 / 1000 = 16,000
+
+#define SYSTICK_EN				(1U << 0)
+#define SYSTICK_CLK_SOURCE		(1U << 1)
+
+void SystickDelayMs(int n)
+{
+
+}

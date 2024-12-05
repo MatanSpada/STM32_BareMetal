@@ -1,0 +1,66 @@
+1. 
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_uart.h"
+
+2.
+HAL_Init();
+
+3.
+/*enable clock for GPIOA and UART */
+__HAL_RCC_GPIOA_CLK_ENABLE();  // Enable GPIOA clock
+__HAL_RCC_USART2_CLK_ENABLE(); // Enable UART2 clock
+
+4.
+/* GPIO Pins for UART */
+GPIO_InitTypeDef GPIO_InitStruct = {0}; 	// Create an object 
+GPIO_InitStruct.Pin = GPIO_PIN_2;		// Choose the first pin to configure 
+GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;    	// Alternate Function in Push-Pull mode (allows high pulses and low pulses on the same line)
+GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;	// Set the speed which the pin can switch states (HIGH/LOW)
+GPIO_InitStruct.Alternate = GPIO_AF7_USART2;	// Choose the type of the alternate function
+HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);		// Apply the configuration on the current GPIO - only PA2
+
+// Configure PA3 - leave the same configurations as is
+GPIO_InitStruct.Pin = GPIO_PIN_3;		// Choose the second pin to configure 
+HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);		// Apply the GPIO configuration on the current GPIO - only PA3
+
+5.
+// Set the UART configurations
+UART_HandleTypeDef huart2;			// Create an object, the h stands for hal/handle
+huart2.Instance = USART2;
+huart2.Init.BaudRate = 9600;
+huart2.Init.WordLength = UART_WORDLENGTH_8B;
+huart2.Init.StopBits = UART_STOPBITS_1;
+huart2.Init.Parity = UART_PARITY_NONE;
+huart2.Init.Mode = UART_MODE_TX_RX;			// Enable transmitter and receiver
+huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;	 	// No hardware flow control
+huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+
+// hardware flow control:
+// RTS (Request to Send): Indicates that the transmitter is ready to send data.
+// CTS (Clear to Send): Indicates that the receiver is ready to receive data.
+
+6.
+// Apply UART configurations
+if (HAL_UART_Init(&huart2) != HAL_OK) 
+{
+    // Initialization Error
+    Error_Handler();
+}
+
+7. 
+// SEND DATA
+uint8_t message[] = "Hello, UART!\r\n";
+HAL_UART_Transmit(&huart2, message, sizeof(message) - 1, HAL_MAX_DELAY);
+
+8.
+// can use echo to send back what received.
+uint8_t received_data;
+
+if (HAL_UART_Receive(&huart2, &received_data, 1, HAL_MAX_DELAY) == HAL_OK) 
+{
+    // Echo the received character
+    HAL_UART_Transmit(&huart2, &received_data, 1, HAL_MAX_DELAY);
+}
+
+
+

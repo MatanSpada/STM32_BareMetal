@@ -769,3 +769,24 @@ java.lang.Exception: Resource '/9_adc' does not exist.
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-12-04 00:55:53.931
 !MESSAGE Indexed '10_adc_continues_conversion' (5 sources, 65 headers) in 0.302 sec: 2,846 declarations; 4,112 references; 4 unresolved inclusions; 30 syntax errors; 583 unresolved names (7.7%)
+!SESSION 2024-12-05 09:54:12.037 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=he_IL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-05 09:54:17.975
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-12-05 09:54:29.960
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-12-05 09:54:29.968
+!MESSAGE Log4j2 initialized with config file C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-12-05 09:54:36.953
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-12-05 09:55:18.568
+!MESSAGE Indexed '11_Systick_delay' (7 sources, 67 headers) in 1.54 sec: 2,866 declarations; 4,201 references; 4 unresolved inclusions; 30 syntax errors; 583 unresolved names (7.6%)

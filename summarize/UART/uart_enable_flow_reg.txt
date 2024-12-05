@@ -1,0 +1,54 @@
+/* PA2 and PA3 are the UART pins, so we need to enable clock to port A. */
+/* we define RCC_GPIOAEN as described in the reference_manual. */
+
+1.
+/* Enable the clock for the GPIO port connected to the UART pins */
+#define RCC_GPIOAEN	(1U << 0)
+RCC->AHB1ENR |= RCC_GPIOAEN;
+
+2.
+/* Set the GPIO pins for Alternate Function mode according to reference manual */
+/* assign the gpio to a specific peripheral - the peripheral take ownership on the gpio */
+GPIOA->MODER &= ~(1U << 4); // PA2 - MODER2
+GPIOA->MODER |= (1U << 5);  // PA2 - MODER2
+GPIOA->MODER &= ~(1U << 6); // PA3 - MODER3
+GPIOA->MODER |= (1U << 7);  // PA3 - MODER3
+/* OR */
+GPIOA->MODER |= (2U << (2 * 2)) | (2U << (2 * 3)); // PA2 and PA3 as Alternate Function
+/* explain to this calculation is down */
+
+3.
+/* choose the type of the Alternate function for PA2 and PA3 which is UART_TX - (AF07/AF7 - by table 9 in datasheet).*/
+GPIOA->AFR[0] |= (1UL << 8);	// PA2
+GPIOA->AFR[0] |= (1UL << 9);	// PA2
+GPIOA->AFR[0] |= (1UL << 10);	// PA2
+GPIOA->AFR[0] &= ~(1UL << 11);	// PA2
+GPIOA->AFR[0] |= (1UL << 12);	// PA3
+GPIOA->AFR[0] |= (1UL << 13);	// PA3
+GPIOA->AFR[0] |= (1UL << 14);	// PA3
+GPIOA->AFR[0] &= ~(1UL << 15);	// PA3
+/* OR */
+GPIOA->AFR[0] |= (7U << (AMOUNT_OF_BITS * PA2)) | (7U << (AMOUNT_OF_BITS * PA3)); // PA2, PA3 to AF7 (USART2)
+/*[AMOUNT_OF_BITS = 4]
+  [PA2 = 2, PA3 = 3]  
+  this calculation is setting the right bits in their places - also valid to above */
+  
+ 4.
+/* Enable clock to UART2 */
+  RCC->APB1ENR |= UART2EN;
+  
+5. 
+/* Set UART baud rate */
+/* BRR - baud rate register */
+USART2->BRR = (periph_clock_freq + (baudrate/2U))/baudrate
+/* periph_clock_freq and baudrate are defines */
+
+
+/* Choose direction transmitter and/or receiver */
+USART2->CR1 = USART_CR1_TE | USART_CR1_RE;
+/* use = if u wanna use default conf for pairity bit, packet_size, etc...or use |= to add to the existing conf.
+
+/* enable UART module - like "uart_start()" */
+USART2->CR1 |= CR1_UE; // |= cause we add to prev conf.
+
+
