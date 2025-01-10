@@ -1,21 +1,35 @@
-14:37:50 **** Incremental Build of configuration Debug for project 11_Systick_delay ****
+01:40:47 **** Incremental Build of configuration Debug for project 14_input_capture ****
 make -j16 all 
-arm-none-eabi-gcc "../Src/systick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401RETx -DSTM32F4 -DSTM32F401xE -c -I../Inc -I"C:/Users/matan/Documents/STM32F4-BareMetal_Workspace/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/matan/Documents/STM32F4-BareMetal_Workspace/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/systick.d" -MT"Src/systick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/systick.o"
-arm-none-eabi-gcc -o "11_Systick_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\11_Systick_delay\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11_Systick_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 11_Systick_delay.elf
+arm-none-eabi-gcc "../Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401RETx -DSTM32F4 -DSTM32F401xE -c -I../Inc -I"C:/Users/matan/Documents/STM32F4-BareMetal_Workspace/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/matan/Documents/STM32F4-BareMetal_Workspace/chip_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/tim.d" -MT"Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/tim.o"
+arm-none-eabi-gcc -o "14_input_capture.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\14_input_capture\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="14_input_capture.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 14_input_capture.elf
  
-arm-none-eabi-size  11_Systick_delay.elf 
-arm-none-eabi-objdump -h -S 11_Systick_delay.elf  > "11_Systick_delay.list"
+arm-none-eabi-size  14_input_capture.elf 
+arm-none-eabi-objdump -h -S 14_input_capture.elf  > "14_input_capture.list"
    text	   data	    bss	    dec	    hex	filename
-   5376	     92	   1900	   7368	   1cc8	11_Systick_delay.elf
+    996	      0	   1568	   2564	    a04	14_input_capture.elf
 Finished building: default.size.stdout
  
-Finished building: 11_Systick_delay.list
+Finished building: 14_input_capture.list
  
-14:37:57 **** Incremental Build of configuration Debug for project 11_Systick_delay ****
+01:41:00 **** Incremental Build of configuration Debug for project 14_input_capture ****
 make -j16 all 
-arm-none-eabi-size  11_Systick_delay.elf 
+arm-none-eabi-size  14_input_capture.elf 
    text	   data	    bss	    dec	    hex	filename
-   5376	     92	   1900	   7368	   1cc8	11_Systick_delay.elf
+    996	      0	   1568	   2564	    a04	14_input_capture.elf
+Finished building: default.size.stdout
+ 
+01:41:22 **** Incremental Build of configuration Debug for project 14_input_capture ****
+make -j16 all 
+arm-none-eabi-size  14_input_capture.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      0	   1568	   2564	    a04	14_input_capture.elf
+Finished building: default.size.stdout
+ 
+01:41:40 **** Incremental Build of configuration Debug for project 14_input_capture ****
+make -j16 all 
+arm-none-eabi-size  14_input_capture.elf 
+   text	   data	    bss	    dec	    hex	filename
+    996	      0	   1568	   2564	    a04	14_input_capture.elf
 Finished building: default.size.stdout
  

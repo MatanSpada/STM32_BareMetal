@@ -1,0 +1,12 @@
+#include "stm32f4xx.h" // for registers
+#include "tim.h"
+
+// 1 cycle/event per second
+void tim2_1hz_init(void) // choose timer 2
+{
+	// enable clock for timer 2
+	// set the prescaler value
+	// set the auto-reload value
+	// clear counter
+	// enable timer
+}

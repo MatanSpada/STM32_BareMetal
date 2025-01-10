@@ -1,0 +1,7 @@
+In Capture Mode:
+CCR1 stores the timer counter value at the exact moment an external event occurs (e.g., a rising or falling edge on a GPIO pin linked to the timer).
+
+In Compare Mode:
+CCR1 is a register where you store a value that the timer counter will compare against.
+If the timer counter matches this value, a predefined action occurs, such as toggling a GPIO pin or generating an interrupt.
+Reading TIM3->CCR1 in this case gives the value you're using for the comparison.

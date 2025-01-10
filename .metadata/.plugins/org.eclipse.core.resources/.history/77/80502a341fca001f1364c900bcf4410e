@@ -1,0 +1,56 @@
+#include "exti.h"
+
+#define RCC_GPIOCEN 	(1U << 2)
+#define RCC_SYSCFGEN 	(1U << 14) // pin for enable/disable clock for syscfg
+
+/* init button (connected to port C gpio 13) for interrupt */
+void pc13_exti_init(void)
+{
+	// disable global interrupt
+	// enable clock access for gpioc
+	// set pc13 as input
+	// enable clock access for the the module contains the exti - SYSCFG
+		// responsible for EXTI, map GPIO for EXTI, Boot Mode and more
+		// part of the internal circuits of the chip.
+	// select port c for EXTI13
+	// unmask EXTI13 - remove the "cover" or enable it.
+	// select rising/falling edge trigger.
+	// enable the EXTI13 line in NVIC
+	// enable global interrupt
+
+	// disable global interrupt
+	__disable_irq();
+
+	// enable clock access for gpioc
+	RCC->AHB1ENR |= RCC_GPIOCEN;
+
+	// set pc13 as input
+	GPIOC->MODER &= ~(1U << 26);
+	GPIOC->MODER &= ~(1U << 27);
+
+	// enable clock access for the the module contains the exti - SYSCFG
+	RCC->APB2ENR |= RCC_SYSCFGEN;
+
+	// select port c for EXTI13
+	// by the reference manual, EXTICR4 (control register 4) is responsible for EXTI13.
+	// the control register are set with an array, starting with index 0, therefore, EXTICR[3] = CR4.
+	// reset value of the register is 0, so by the reference's trueth table, for PORT C , we need
+	// to set bits 4-7 to 0010, so only set bit 5.
+	SYSCFG->EXTICR[3] |= (1U << 5);
+
+	// unmask EXTI13 - remove the "cover" or enable it.
+	// look for EXTI_IMR - interrupt mask register
+	EXTI->IMR |= (1U << 13);
+
+	// select rising/falling edge trigger.
+	// we choose falling - change from high to low
+	// look for EXTI_FTSR - falling trigger selection register
+	EXTI->FTSR |= (1U << 13);
+
+	// enable the EXTI13 line in NVIC
+
+
+	// enable global interrupt
+	__enable_irq();
+
+}

@@ -1,0 +1,11 @@
+purpose:
+
+make a periodic operation  on a gpio pin, without explicitly specify it - using only the timer configuration.
+
+1. config gpio as an alternate function.
+2. config timer periodic values.
+3. config the output compare mode: 
+	- CCMR1: capture compare mode register ch1 - set the operation on the event (toggle in our case);
+	- enable the compare mode
+	- clear counter
+	- enable timer

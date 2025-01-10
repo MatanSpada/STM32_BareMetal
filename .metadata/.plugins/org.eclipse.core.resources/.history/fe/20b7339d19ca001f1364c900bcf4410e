@@ -1,0 +1,32 @@
+#include "exti.h"
+
+#define RCC_GPIOCEN 	(1U << 2)
+#define RCC_SYSCFGEN 	(1U << 14) // pin for enable/disable clock for syscfg
+
+/* init button (connected to port C gpio 13) for interrupt */
+void pc13_exti_init(void)
+{
+	// disable global interrupt
+	// enable clock access for gpioc
+	// enable clock access for the the module contains the exti - SYSCFG
+		// responsible for EXTI, map GPIO for EXTI, Boot Mode and more
+		// part of the internal circuits of the chip.
+	// select port c for EXTI13
+	// unmask EXTI13
+	// select rising/falling edge trigger.
+	// enable the EXTI13 line in NVIC
+	// enable global interrupt
+
+	// disable global interrupt
+	__disable_irq();
+
+	// enable clock access for gpioc
+	RCC->AHB1ENR |= RCC_GPIOCEN;
+
+	// enable clock access for the the module contains the exti - SYSCFG
+	RCC->APB2ENR |= RCC_SYSCFGEN;
+
+	// enable global interrupt
+	__enable_irq();
+
+}

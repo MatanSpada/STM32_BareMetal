@@ -1,0 +1,18 @@
+#include <stdint.h>
+#include <stdio.h>
+#include "stm32f4xx.h" // for registers
+#include "uart.h"
+#include "adc.h"
+#include "systick.h"
+#include "tim.h"
+
+int main()
+{
+	tim2_pa5_output_compare(); // creates a toggle pin each second.
+	tim3_pa6_input_capture();  // "activate" and capture on rising edge (currenly)
+
+	while(1)
+	{
+
+	}
+}

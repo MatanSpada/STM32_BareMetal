@@ -1,0 +1,14 @@
+#include "exti.h"
+
+
+/* init button (connected to port C gpio 13) for interrupt */
+
+void pc13_exti_init(void)
+{
+	// disable global interrupt
+	// enable clock access for gpioc
+	// enable clock access for the the module contains the exti - SYSCFG
+		// responsible for EXTI, map GPIO for EXTI, Boot Mode and more
+		// part of the internal circuits of the chip.
+
+}

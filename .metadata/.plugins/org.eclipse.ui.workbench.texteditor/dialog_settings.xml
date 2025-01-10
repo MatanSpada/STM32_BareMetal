@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="EXTI15_10"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="EXTI15_10"/>
+			<item value="EXTI15"/>
+			<item value="EXTI Line"/>
+			<item value="EXTI0_IRQn"/>
+			<item value="40"/>
+			<item value="EXTI0"/>
+			<item value="syscfg"/>
+			<item value="EXTI"/>
+			<item value="CCR1"/>
+			<item value="TIM2_CCER_CC1EN"/>
+			<item value="TIM2_CCE1_EN"/>
 			<item value="ADC_SR_EOC"/>
 			<item value="ADC_CR2_SWSTART"/>
 			<item value="ADC_CR2_ADON"/>
 			<item value="cr"/>
-			<item value="401"/>
-			<item value="40"/>
-			<item value="RCC_GPIOAEN"/>
-			<item value="GPIOA_BASE"/>
-			<item value="GPIO_BASE"/>
-			<item value="GPIOA_MODE_R_BASE"/>
-			<item value="AHB1_BASE"/>
 		</list>
 		<list key="replacehistory">
+			<item value="CCER_CC1EN"/>
+			<item value="TIM2_CCER_CC1EN"/>
 			<item value="ADC1_CR2_ADON"/>
 			<item value="ADC1_CR2_SWSTART"/>
 			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="909"/>
-		<item key="DIALOG_Y_ORIGIN" value="208"/>
+		<item key="DIALOG_X_ORIGIN" value="1363"/>
+		<item key="DIALOG_Y_ORIGIN" value="508"/>
 		<item key="DIALOG_WIDTH" value="511"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="567"/>
+		<item key="DIALOG_Y_ORIGIN" value="314"/>
 	</section>
 </section>

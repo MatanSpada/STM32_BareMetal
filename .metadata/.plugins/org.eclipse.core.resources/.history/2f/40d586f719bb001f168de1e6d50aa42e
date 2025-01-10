@@ -1,0 +1,72 @@
+#include "stm32f4xx.h" // for registers
+#include "tim.h"
+
+#define TIM2EN			(1U << 0)
+#define TIMX_CR1_CEN	(1U << 0)
+#define TIM2_OUTPUT_CMP_TOGGLE (1U << 4) | (1U << 5)
+
+// steps:
+	// enable clock for timer2
+	// set the prescaler value
+	// set the auto-reload value
+	// clear counter
+	// enable timer
+
+// 1 cycle/event per second
+void tim2_1hz_init(void) // chose timer 2 which connected to APB1 BUS
+{
+	// enable clock for timer2
+	RCC->APB1ENR |= TIM2EN;
+
+	// set the prescaler value
+	TIM2->PSC = 16000 - 1;
+
+	// set the auto-reload value
+	TIM2->ARR = 1000 - 1;
+
+	// clear counter
+	TIM2->CNT = 0;
+
+	// enable timer
+	TIM2->CR1 |= TIMX_CR1_CEN;
+
+}
+
+// output compare is a mode where we can act on a specific gpio pin,
+// wihout writing to, directly like this: GPIOA->ODR ^= LED_PIN (in main).
+// this means, we just set the timer and the operation we want and set - happen.
+// how?
+// we need to set the specific gpio pin to an alternate function.
+// in our case, we want pin PA5 cause it's connected to the LED.
+// so we go the alternate func table and look which AF is for PA5 (p.47 in datasheet).
+
+void tim2_output_compare(void) // choose timer 2 which connected to APB1 BUS
+{
+	// enable clock for timer2
+	RCC->APB1ENR |= TIM2EN;
+
+	// set the prescaler value
+	TIM2->PSC = 16000 - 1;
+
+	// set the auto-reload value
+	TIM2->ARR = 1000 - 1;
+
+	// enable tim2 ch1 in compare mode
+	// go to reference manual, p.298 - CCMR (capture/compare mode register)
+	// we're looking for OC1M - output compare 1 mode (1 stands for channel 1).
+
+	// set output compare mode
+	TIM2->CCMR1 |= TIM2_OUTPUT_CMP_TOGGLE; //(1U << 4) | (1U << 5);
+	// or: 	TIM2->CCMR1 |= 0x03 << 4
+
+
+
+
+
+	// clear counter
+	TIM2->CNT = 0;
+
+	// enable timer
+	TIM2->CR1 |= TIMX_CR1_CEN;
+
+}

@@ -1,0 +1,20 @@
+#include "stm32f4xx.h" // for registers
+#include "tim.h"
+
+#define TIM2EN		(1U << 0)
+
+// 1 cycle/event per second
+void tim2_1hz_init(void) // chose timer 2 which connected to APB1 BUS
+{
+	// enable clock for timer2
+	// set the prescaler value
+	// set the auto-reload value
+	// clear counter
+	// enable timer
+
+	// enable clock for timer2
+	// set the prescaler value
+	// set the auto-reload value
+	// clear counter
+	// enable timer
+}

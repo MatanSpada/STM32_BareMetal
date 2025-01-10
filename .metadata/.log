@@ -790,3 +790,81 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-12-05 09:55:18.568
 !MESSAGE Indexed '11_Systick_delay' (7 sources, 67 headers) in 1.54 sec: 2,866 declarations; 4,201 references; 4 unresolved inclusions; 30 syntax errors; 583 unresolved names (7.6%)
+!SESSION 2024-12-10 21:22:13.838 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=he_IL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-10 21:22:20.383
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-12-10 21:22:34.114
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-12-10 21:22:34.120
+!MESSAGE Log4j2 initialized with config file C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-12-10 23:22:43.179
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-12-12 02:01:47.757 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=he_IL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-12-12 02:01:55.149
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-12-12 02:02:08.123
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-12-12 02:02:08.131
+!MESSAGE Log4j2 initialized with config file C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-12-12 02:02:16.041
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-12-12 02:02:48.323
+!MESSAGE Indexed '12_timers' (8 sources, 69 headers) in 1.42 sec: 2,871 declarations; 4,281 references; 4 unresolved inclusions; 30 syntax errors; 583 unresolved names (7.5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-12-13 00:52:49.745
+!MESSAGE Indexed '13_OutputCompare' (7 sources, 68 headers) in 0.463 sec: 3,270 declarations; 5,677 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.022%)
+!SESSION 2024-12-15 20:53:19.491 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=he_IL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-12-15 20:53:50.415
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-12-15 20:53:50.424
+!MESSAGE Log4j2 initialized with config file C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-12-15 20:54:02.990
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-12-16 00:24:27.119
+!MESSAGE Indexed '14_input_capture' (7 sources, 68 headers) in 0.853 sec: 3,274 declarations; 5,706 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.022%)
+!SESSION 2025-01-02 13:36:06.522 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=he_IL
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-01-02 13:36:30.733
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-01-02 13:36:30.742
+!MESSAGE Log4j2 initialized with config file C:\Users\matan\Documents\STM32F4-BareMetal_Workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-01-02 13:36:40.341
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-03 22:36:38.614
+!MESSAGE Indexed '15_input_interrupt' (7 sources, 67 headers) in 1.48 sec: 2,863 declarations; 4,327 references; 4 unresolved inclusions; 30 syntax errors; 583 unresolved names (7.5%)

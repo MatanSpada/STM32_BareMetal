@@ -1,7 +1,0 @@
-#include "stm32f4xx.h" // for registers
-
-#define SYSTICK_VAL_MILI
-void SystickDelayMs(int n)
-{
-
-}

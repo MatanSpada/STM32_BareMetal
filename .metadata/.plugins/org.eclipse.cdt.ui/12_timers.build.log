@@ -1,0 +1,10 @@
+00:34:04 **** Incremental Build of configuration Debug for project 12_timers ****
+make -j16 all 
+arm-none-eabi-size  12_timers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5392	     92	   1900	   7384	   1cd8	12_timers.elf
+Finished building: default.size.stdout
+ 
+
+00:34:04 Build Finished. 0 errors, 0 warnings. (took 142ms)
+

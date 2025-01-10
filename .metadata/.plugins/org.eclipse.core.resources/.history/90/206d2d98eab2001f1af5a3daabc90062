@@ -1,6 +1,0 @@
-#include "stm32f4xx.h" // for registers
-
-void SystickDelayMs(int n)
-{
-
-}
